@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>economia-sustentavel-castanha-para.html — Visual Studio Code</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .vscode-mono {
+            font-family: 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
+        }
+
+        .vscode-titlebar {
+            background: #323233;
+        }
+
+        .activity-bar {
+            background: #2d2d2d;
+            width: 48px;
+        }
+
+        .sidebar {
+            background: #252526;
+            width: 280px;
+            border-right: 1px solid #3c3c3c;
+        }
+
+        .editor-area {
+            background: #1e1e1e;
+        }
+
+        .tab-bar {
+            background: #252526;
+            border-bottom: 1px solid #3c3c3c;
+        }
+
+        .tab {
+            background: #1e1e1e;
+            border-right: 1px solid #3c3c3c;
+            border-bottom: 1px solid #1e1e1e;
+        }
+
+        .tab.active {
+            background: #1e1e1e;
+            border-bottom: 1px solid #1e1e1e;
+        }
+
+        .explorer-item {
+            transition: background-color 0.1s ease;
+        }
+        
+        .explorer-item:hover {
+            background-color: #2a2d2e;
+        }
+        
+        .explorer-item.active {
+            background-color: #37373d;
+        }
+
+        .prose-custom {
+            color: #d4d4d4;
+            line-height: 1.7;
+        }
+        
+        .prose-custom h1, .prose-custom h2, .prose-custom h3 {
+            color: #ffffff;
+            font-weight: 600;
+        }
+        
+        .prose-custom strong {
+            color: #c8e6c9;
+        }
+
+        .stat-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3);
+        }
+
+        .strategy-item {
+            transition: all 0.2s ease;
+        }
+        
+        .strategy-item:hover {
+            background-color: #2a2d2e;
+            transform: translateX(4px);
+        }
+
+        .vscode-scrollbar::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        .vscode-scrollbar::-webkit-scrollbar-track {
+            background: #1e1e1e;
+        }
+        
+        .vscode-scrollbar::-webkit-scrollbar-thumb {
+            background: #555;
+            border-radius: 5px;
+        }
+        
+        .tree-file {
+            color: #d4d4d4;
+        }
+    </style>
+</head>
+<body class="bg-[#1e1e1e] text-[#d4d4d4] overflow-hidden h-screen flex flex-col">
+    <!-- Title Bar -->
+    <div class="h-9 flex items-center px-3 text-sm select-none border-b border-[#3c3c3c]" style="background: #323233;">
+        <div class="flex items-center gap-x-2">
+            <div class="flex gap-x-1.5">
+                <div class="w-3 h-3 rounded-full bg-[#ff5f57]"></div>
+                <div class="w-3 h-3 rounded-full bg-[#febc2e]"></div>
+                <div class="w-3 h-3 rounded-full bg-[#28c840]"></div>
+            </div>
+            <div class="ml-4 flex items-center gap-x-2 text-[#cccccc]">
+                <i class="fa-brands fa-microsoft text-[#0078d4]"></i>
+                <span class="font-medium">economia-sustentavel-castanha-para.html</span>
+                <span class="text-[#6b6b6b] text-xs">— Visual Studio Code</span>
+            </div>
+        </div>
+        <div class="flex-1"></div>
+        <div class="flex items-center gap-x-4 text-xs">
+            <div class="flex items-center gap-x-1.5 px-2.5 py-1 rounded hover:bg-white/5">
+                <i class="fa-solid fa-user text-[#3794ff]"></i>
+                <span class="text-[#9d9d9d]">dev-sustentavel</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu Bar -->
+    <div class="h-7 bg-[#252526] border-b border-[#3c3c3c] flex items-center px-2 text-xs select-none">
+        <div class="flex items-center gap-x-5 text-[#cccccc]">
+            <div class="hover:bg-white/10 px-2 py-0.5 rounded cursor-pointer">Arquivo</div>
+            <div class="hover:bg-white/10 px-2 py-0.5 rounded cursor-pointer">Editar</div>
+            <div class="hover:bg-white/10 px-2 py-0.5 rounded cursor-pointer">Exibir</div>
+            <div class="hover:bg-white/10 px-2 py-0.5 rounded cursor-pointer">Terminal</div>
+        </div>
+        <div class="flex-1"></div>
+    </div>
+
+    <div class="flex flex-1 overflow-hidden">
+        
+        <!-- Activity Bar -->
+        <div class="flex flex-col items-center py-2 gap-y-1 border-r border-[#3c3c3c]" style="background: #2d2d2d; width: 48px;">
+            <div class="w-10 h-10 flex items-center justify-center text-[#3794ff] hover:bg-[#37373d] rounded cursor-pointer"><i class="fa-solid fa-folder-open fa-lg"></i></div>
+            <div class="w-10 h-10 flex items-center justify-center text-[#9d9d9d] hover:bg-[#37373d] rounded cursor-pointer"><i class="fa-solid fa-search fa-lg"></i></div>
+            <div class="w-10 h-10 flex items-center justify-center text-[#9d9d9d] hover:bg-[#37373d] rounded cursor-pointer"><i class="fa-brands fa-git-alt fa-lg"></i></div>
+            <div class="flex-1"></div>
+            <div class="w-10 h-10 flex items-center justify-center text-[#10b981] hover:bg-[#37373d] rounded cursor-pointer"><i class="fa-solid fa-leaf fa-lg"></i></div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="flex flex-col overflow-hidden" style="background: #252526; width: 280px; border-right: 1px solid #3c3c3c;">
+            <div class="h-9 flex items-center justify-between px-3 text-xs font-medium border-b border-[#3c3c3c]">
+                <span>EXPLORADOR</span>
+            </div>
+            
+            <div class="px-3 py-2 text-[10px] font-medium text-[#9d9d9d]">PROJETO AMAZÔNIA</div>
+            
+            <div class="flex-1 overflow-y-auto px-1 text-sm">
+                <div onclick="loadSection('readme')" class="explorer-item active flex items-center gap-x-2 px-3 py-[3px] rounded cursor-pointer text-white" id="file-readme">
+                    <i class="fa-solid fa-file-lines w-4"></i>
+                    <span>README.md</span>
+                </div>
+                <div onclick="loadSection('trabalhadores')" class="explorer-item flex items-center gap-x-2 px-3 py-[3px] rounded cursor-pointer" id="file-trabalhadores">
+                    <i class="fa-solid fa-users w-4"></i>
+                    <span>trabalhadores.md</span>
+                </div>
+                <div onclick="loadSection('estrategias')" class="explorer-item flex items-center gap-x-2 px-3 py-[3px] rounded cursor-pointer" id="file-estrategias">
+                    <i class="fa-solid fa-seedling w-4"></i>
+                    <span>estrategias-producao.md</span>
+                </div>
+                <div onclick="loadSection('beneficios')" class="explorer-item flex items-center gap-x-2 px-3 py-[3px] rounded cursor-pointer" id="file-beneficios">
+                    <i class="fa-solid fa-globe-americas w-4"></i>
+                    <span>beneficios.md</span>
+                </div>
+                <div onclick="loadSection('futuro')" class="explorer-item flex items-center gap-x-2 px-3 py-[3px] rounded cursor-pointer" id="file-futuro">
+                    <i class="fa-solid fa-rocket w-4"></i>
+                    <span>desafios-futuro.md</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Editor -->
+        <div class="flex-1 flex flex-col min-w-0" style="background: #1e1e1e;">
+            
+            <div class="h-9 flex items-center px-1 gap-x-px text-sm flex-shrink-0" style="background: #252526; border-bottom: 1px solid #3c3c3c;">
+                <div onclick="loadSection('readme')" class="tab active flex items-center gap-x-2 px-4 h-full cursor-pointer text-white" id="tab-readme">
+                    <i class="fa-solid fa-file-lines text-[#3794ff]"></i>
+                    <span class="font-medium">economia-sustentavel-castanha-para.md</span>
+                </div>
+            </div>
+            
+            <div class="h-7 flex items-center px-4 text-xs text-[#9d9d9d]" style="background: #1e1e1e; border-bottom: 1px solid #3c3c3c;">
+                PROJETO AMAZÔNIA / docs / <span id="current-file-breadcrumb" class="text-white">economia-sustentavel-castanha-para.md</span>
+            </div>
+            
+            <div class="flex-1 overflow-y-auto p-8" id="editor-content" style="background: #1e1e1e;">
+                <!-- Conteúdo dinâmico via JavaScript -->
+            </div>
+            
+            <div class="h-6 flex items-center px-3 text-xs text-white flex-shrink-0" style="background: #007acc;">
+                <div class="flex items-center gap-x-4 w-full">
+                    <div>main • 3 commits</div>
+                    <div class="flex-1"></div>
+                    <div>Ln 87, Col 14 | UTF-8 | MARKDOWN | 🌰 Sustentável</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function makeRainbowText(element) {
+            const text = element.textContent;
+            element.innerHTML = '';
+            const colors = ['#ef4444', '#f97316', '#eab308', '#22c55e', '#06b6d4', '#3b82f6', '#a855f7'];
+            for (let i = 0; i < text.length; i++) {
+                const span = document.createElement('span');
+                span.textContent = text[i];
+                span.style.color = colors[i % colors.length];
+                element.appendChild(span);
+            }
+        }
+
+        const sections = {
+            readme: `
+                <div class="max-w-3xl mx-auto">
+                    <div class="flex items-center gap-x-3 mb-6">
+                        <div class="w-12 h-12 bg-emerald-900/30 rounded-xl flex items-center justify-center">
+                            <i class="fa-solid fa-seedling text-emerald-400 text-3xl"></i>
+                        </div>
+                        <div>
+                            <h1 id="main-title" class="text-4xl font-semibold tracking-tight text-white">Economia Sustentável da Castanha-do-Pará</h1>
+                            <p class="text-emerald-400 mt-1 text-lg">Preservando a Amazônia, gerando vida e renda digna</p>
+                        </div>
+                    </div>
+                    
+                    <div class="prose-custom text-[15px] leading-relaxed">
+                        <p class="text-lg">A <strong>castanha-do-pará</strong> (Bertholletia excelsa) é muito mais que um fruto nutritivo. Ela é o símbolo de uma economia que une conservação da floresta, valorização do trabalho humano e desenvolvimento comunitário na Amazônia brasileira.</p>
+                        
+                        <div class="my-8 p-5 bg-[#252526] border border-[#3c3c3c] rounded-xl">
+                            <div class="flex items-start gap-4">
+                                <div class="text-4xl">🌰</div>
+                                <div class="flex-1">
+                                    <div class="font-medium text-white mb-1">Por que é sustentável?</div>
+                                    <div class="text-sm text-[#b3b3b3]">A colheita é feita manualmente a partir dos frutos que caem naturalmente da árvore. Não é necessário derrubar nenhuma castanheira. Isso mantém a floresta em pé e protege toda a biodiversidade associada.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl mt-8 mb-3 text-white">Estratégias de Produção Sustentável</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li><strong>1.</strong> Colheita manual e ecológica (frutos caídos naturalmente)</li>
+                            <li><strong>2.</strong> Manejo florestal comunitário participativo</li>
+                            <li><strong>3.</strong> Uso de EPIs e boas práticas para evitar acidentes e aflatoxinas</li>
+                            <li><strong>4.</strong> Processamento local e agregação de valor (óleo, manteiga, cosméticos)</li>
+                            <li><strong>5.</strong> Certificações Fair Trade e Orgânica</li>
+                        </ul>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
+                            <div class="stat-card bg-[#252526] border border-[#3c3c3c] p-4 rounded-xl">
+                                <div class="text-emerald-400 text-xs">FLORESTA EM PÉ</div>
+                                <div class="text-3xl font-semibold mt-1 text-white">+150 mil</div>
+                                <div class="text-xs text-[#9d9d9d]">hectares protegidos</div>
+                            </div>
+                            <div class="stat-card bg-[#252526] border border-[#3c3c3c] p-4 rounded-xl">
+                                <div class="text-emerald-400 text-xs">FAMÍLIAS BENEFICIADAS</div>
+                                <div class="text-3xl font-semibold mt-1 text-white">+3.000</div>
+                                <div class="text-xs text-[#9d9d9d]">em cooperativas</div>
+                            </div>
+                            <div class="stat-card bg-[#252526] border border-[#3c3c3c] p-4 rounded-xl">
+                                <div class="text-emerald-400 text-xs">RENDA GERADA</div>
+                                <div class="text-3xl font-semibold mt-1 text-white">R$ 30 mi+</div>
+                                <div class="text-xs text-[#9d9d9d]">lucro anual em cooperativas</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `,
+
+            trabalhadores: `
+                <div class="max-w-3xl mx-auto">
+                    <h2 class="text-3xl font-semibold text-white mb-6 flex items-center gap-x-3">
+                        <i class="fa-solid fa-users text-amber-400"></i> Trabalhadores e Comunidades
+                    </h2>
+                    <div class="prose-custom">
+                        <p>Por trás de cada castanha existem <strong>extrativistas</strong>, famílias ribeirinhas e comunidades que dedicam suas vidas à floresta.</p>
+                        
+                        <div class="mt-6 space-y-4">
+                            <div class="p-4 bg-[#252526] rounded-xl border border-[#3c3c3c]">
+                                <strong class="text-amber-400">Extrativistas e ribeirinhos</strong><br>
+                                <span class="text-sm">Moradores das florestas que conhecem cada castanheira. A colheita acontece entre dezembro e março.</span>
+                            </div>
+                            <div class="p-4 bg-[#252526] rounded-xl border border-[#3c3c3c]">
+                                <strong class="text-pink-400">Mulheres na produção</strong><br>
+                                <span class="text-sm">Atuam no beneficiamento, secagem e embalagem. Recebem remuneração justa em cooperativas.</span>
+                            </div>
+                            <div class="p-4 bg-[#252526] rounded-xl border border-[#3c3c3c]">
+                                <strong class="text-sky-400">Cooperativas</strong><br>
+                                <span class="text-sm">Ex: Cooperacre (Acre) — gerou R$ 30 milhões de lucro, pagou 269 trabalhadores e sustentou mais de 3 mil famílias.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `,
+
+            estrategias: `
+                <div class="max-w-3xl mx-auto">
+                    <h2 class="text-3xl font-semibold text-white mb-6 flex items-center gap-x-3">
+                        <i class="fa-solid fa-seedling text-emerald-400"></i> Estratégias de Produção Sustentável
+                    </h2>
+                    <div class="space-y-4">
+                        <div class="strategy-item p-5 bg-[#252526] rounded-2xl border border-[#3c3c3c]">
+                            <strong class="text-emerald-400">1. Colheita manual e ecológica</strong><br>
+                            <span class="text-sm">Frutos coletados apenas quando caem naturalmente. Nenhuma árvore é derrubada.</span>
+                        </div>
+                        <div class="strategy-item p-5 bg-[#252526] rounded-2xl border border-[#3c3c3c]">
+                            <strong class="text-emerald-400">2. Manejo florestal comunitário</strong><br>
+                            <span class="text-sm">As comunidades planejam e organizam a produção coletivamente.</span>
+                        </div>
+                        <div class="strategy-item p-5 bg-[#252526] rounded-2xl border border-[#3c3c3c]">
+                            <strong class="text-emerald-400">3. Boas práticas e EPIs</strong><br>
+                            <span class="text-sm">Uso de capacetes, botas e perneiras + treinamento contra aflatoxinas.</span>
+                        </div>
+                        <div class="strategy-item p-5 bg-[#252526] rounded-2xl border border-[#3c3c3c]">
+                            <strong class="text-emerald-400">4. Processamento local e agregação de valor</strong><br>
+                            <span class="text-sm">Produção de óleo, manteiga, farinha e cosméticos dentro da comunidade.</span>
+                        </div>
+                        <div class="strategy-item p-5 bg-[#252526] rounded-2xl border border-[#3c3c3c]">
+                            <strong class="text-emerald-400">5. Certificações Fair Trade e Orgânica</strong><br>
+                            <span class="text-sm">Garantem preço justo e premium que volta diretamente para as famílias.</span>
+                        </div>
+                    </div>
+                </div>
+            `,
+
+            beneficios: `
+                <div class="max-w-3xl mx-auto">
+                    <h2 class="text-3xl font-semibold text-white mb-6">Benefícios para Todos</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div class="bg-[#252526] border border-[#3c3c3c] rounded-2xl p-6">
+                            <strong class="text-emerald-400">🌳 Conservação da Floresta</strong>
+                            <ul class="mt-3 text-sm space-y-1">
+                                <li>• Mantém árvores centenárias em pé</li>
+                                <li>• Protege biodiversidade</li>
+                                <li>• Evita desmatamento</li>
+                            </ul>
+                        </div>
+                        <div class="bg-[#252526] border border-[#3c3c3c] rounded-2xl p-6">
+                            <strong class="text-amber-400">👷 Impacto Social</strong>
+                            <ul class="mt-3 text-sm space-y-1">
+                                <li>• Renda digna para famílias remotas</li>
+                                <li>• Empoderamento de mulheres e jovens</li>
+                                <li>• Fortalecimento de cooperativas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            `,
+
+            futuro: `
+                <div class="max-w-3xl mx-auto">
+                    <h2 class="text-3xl font-semibold text-white mb-6">Desafios e o Futuro</h2>
+                    <p class="mb-6">A cadeia da castanha-do-pará enfrenta desafios como sazonalidade, logística e preço, mas também tem grandes soluções em andamento: fortalecimento de cooperativas, certificações, tecnologia e políticas de apoio à sociobiodiversidade.</p>
+                    <div class="p-6 bg-[#252526] rounded-2xl border border-violet-700/30">
+                        <strong class="text-violet-300">O futuro que queremos:</strong><br>
+                        <span class="text-sm">Uma Amazônia onde a castanha continue sendo colhida por gerações, com floresta em pé e comunidades orgulhosas do seu trabalho.</span>
+                    </div>
+                </div>
+            `
+        };
+
+        let currentSection = 'readme';
+
+        function loadSection(section) {
+            const contentDiv = document.getElementById('editor-content');
+            contentDiv.innerHTML = sections[section];
+
+            document.querySelectorAll('.explorer-item').forEach(el => el.classList.remove('active', 'text-white'));
+            const fileEl = document.getElementById('file-' + section);
+            if (fileEl) fileEl.classList.add('active', 'text-white');
+
+            document.getElementById('current-file-breadcrumb').textContent = section + '.md';
+            currentSection = section;
+
+            if (section === 'readme') {
+                setTimeout(() => {
+                    const title = document.getElementById('main-title');
+                    if (title) makeRainbowText(title);
+                }, 100);
+            }
+        }
+
+        function initializeApp() {
+            const contentDiv = document.getElementById('editor-content');
+            contentDiv.innerHTML = sections.readme;
+
+            setTimeout(() => {
+                const title = document.getElementById('main-title');
+                if (title) makeRainbowText(title);
+            }, 300);
+
+            document.getElementById('file-readme').classList.add('active', 'text-white');
+        }
+
+        window.onload = initializeApp;
+    </script>
+</body>
+</html>
